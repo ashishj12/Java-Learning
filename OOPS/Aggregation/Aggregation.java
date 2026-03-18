@@ -1,0 +1,55 @@
+package OOPS.Aggregation;
+
+public class Aggregation {
+
+    private String vin;
+
+    public String getVin() {
+        return vin;
+    }
+
+    public void setVin(String vin) {
+        this.vin = vin;
+    }
+}
+
+class Speed {
+    private double max;
+
+    public double getMax() {
+        return max;
+    }
+
+    public void setMax(double max) {
+        this.max = max;
+    }
+}
+
+class Van extends Aggregation {
+    private Speed speed;
+
+    public Speed getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(Speed speed) {
+        this.speed = speed;
+    }
+
+    public void print() {
+        System.out.println("Vin: " + this.getVin() + ", Max Speed: " + speed.getMax());
+    }
+}
+
+class Tester {
+
+    public static void main(String[] args) {
+        Speed speed = new Speed();
+        speed.setMax(120);
+        Van van = new Van();
+
+        van.setVin("abcd1233");
+        van.setSpeed(speed);
+        van.print();
+    }
+}
