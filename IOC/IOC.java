@@ -1,40 +1,44 @@
-package IOC;
+// package IOC;
 
-interface Sim {
-    void calling();
+// public class IOC {
+//     public void start() {
+//         System.out.println("Engine Started");
+//     }
+// }
 
-    void data();
-}
+// class Car {
+//     private IOC engine;
 
-class Airtel implements Sim {
-    @Override
-    public void calling() {
-        System.err.println("Airtel Calling");
-    }
+//     // constructor injection
+//     public Car(IOC engine) {
+//         this.engine = engine;
+//     }
 
-    @Override
-    public void data() {
-        System.out.println("Airtel Data");
-    }
-}
+//     public void drive() {
+//         engine.start();
+//         System.out.println("Car is driving");
+//     }
+// }
 
-class Jio implements Sim {
-    @Override
-    public void calling() {
-        System.err.println("Jio Calling");
-    }
+// // configuration using java annotations
+// @Configuration
+// class AppConfig {
+//     @Bean
+//     public IOC engine() {
+//         return new IOC();
+//     }
 
-    @Override
-    public void data() {
-        System.out.println("Jio Data");
-    }
-}
+//     @Bean
+//     public Car car() {
+//         return new Car(engine());
+//     }
+// }
 
-// running without spring IOC
-public class IOC {
-    public static void main(String[] args) {
-        Sim sim = new Jio();
-        sim.calling();
-        sim.data();
-    }
-}
+// // Running the Spring Application
+// public class SpringIoCExample {
+//     public static void main(String[] args) {
+//         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+//         Car car = context.getBean(Car.class);
+//         car.drive();
+//     }
+// }
